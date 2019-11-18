@@ -8,15 +8,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://gitlab.siliconspirit.net/home/mqtt-kumo-bridge.git"
+        "url": "https://github.com/terafin/mqtt-kumo-bridge.git"
     },
     "author": "Justin Wood",
     "license": "MIT",
     "bugs": {
-        "url": "https://gitlab.siliconspirit.net/home/mqtt-kumo-bridge/issues"
+        "url": "https://github.com/terafin/mqtt-kumo-bridge/issues"
     },
     "dependencies": {
-        "homeautomation-js-lib": "git+https://gitlab.siliconspirit.net/home/homeautomation-js-lib.git",
+        "homeautomation-js-lib": "https://github.com/terafin/homeautomation-js-lib.git",
         "lodash": "latest",
         "mqtt": "latest",
         "repeat": "0.0.6",
@@ -27,6 +27,5 @@
     },
     "engines": {
         "node": ">=4"
-    },
-    "homepage": "https://gitlab.siliconspirit.net/home/mqtt-kumo-bridge/blob/master/README.md"
+    }
 }
