@@ -28,6 +28,7 @@ var __awaiter = (this && this.__awaiter) || function(thisArg, _arguments, P, gen
 Object.defineProperty(exports, '__esModule', { value: true })
 const sjcl = require('sjcl')
 const request = require('request')
+const base64 = require('base-64')
 class Kumo {
     constructor(config) {
         this.cfg = config
@@ -75,9 +76,10 @@ class Kumo {
     cryptokeyFromAddress(dt, address) {
         let cfg = this.cfga[address]
         let W = this.h2l(cfg.W)
-        let dt1 = sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(sjcl.codec.hex.toBits(this.l2h(Array.prototype.map.call(dt, function(m2) {
+        let p = base64.decode(cfg.password)
+        let dt1 = sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(sjcl.codec.hex.toBits(this.l2h(Array.prototype.map.call(p + dt, function(m2) {
             return m2.charCodeAt(0)
-        })))))
+        })))));
         let dt1_l = this.h2l(dt1)
         let dt2 = ''
         for (let i = 0; i < 88; i++) {
