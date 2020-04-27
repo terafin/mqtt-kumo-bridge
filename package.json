@@ -1,31 +1,31 @@
 {
-    "name": "mqtt-kumo-bridge",
-    "version": "1.0.0",
-    "description": "Kumo MQTT Bridge",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/terafin/mqtt-kumo-bridge.git"
-    },
-    "author": "Justin Wood",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/terafin/mqtt-kumo-bridge/issues"
-    },
-    "dependencies": {
-        "homeautomation-js-lib": "https://github.com/terafin/homeautomation-js-lib.git",
-        "lodash": "latest",
-        "mqtt": "latest",
-        "repeat": "0.0.6",
-        "request": "latest",
-        "base-64": "^0.1",
-        "sjcl": "^1.0",
-        "source-map-support": "^0.5.19"
-    },
-    "engines": {
-        "node": ">=4"
-    }
+  "name": "mqtt-kumo-bridge",
+  "version": "1.0.0",
+  "description": "Kumo MQTT Bridge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/terafin/mqtt-kumo-bridge.git"
+  },
+  "author": "Justin Wood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/terafin/mqtt-kumo-bridge/issues"
+  },
+  "dependencies": {
+    "homeautomation-js-lib": "https://github.com/terafin/homeautomation-js-lib.git",
+    "lodash": "latest",
+    "mqtt": "latest",
+    "repeat": "0.0.6",
+    "request": "latest",
+    "base-64": "^0.1",
+    "sjcl": "^1.0",
+    "source-map-support": "^0.5.19"
+  },
+  "engines": {
+    "node": ">=4"
+  }
 }
