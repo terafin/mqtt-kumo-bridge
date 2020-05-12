@@ -23,7 +23,7 @@
         "request": "latest",
         "base-64": "^0.1",
         "sjcl": "^1.0",
-        "source-map-support": "^0.5.16"
+        "source-map-support": "^0.5.17"
     },
     "engines": {
         "node": ">=4"
