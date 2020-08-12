@@ -1,7 +1,7 @@
 const mqtt = require('mqtt')
 const _ = require('lodash')
 const logging = require('homeautomation-js-lib/logging.js')
-const repeat = require('repeat')
+const interval = require('interval-promise')
 const health = require('homeautomation-js-lib/health.js')
 const request = require('request')
 const mqtt_helpers = require('homeautomation-js-lib/mqtt_helpers.js')
@@ -130,7 +130,10 @@ const queryKumo = function() {
 
 const startPoll = function() {
     logging.info('Starting to Kumo: ' + username)
-    repeat(queryKumo).every(queryInterval, 's').start.in(1, 'sec')
+    queryKumo()
+    interval(async() => {
+        queryKumo()
+    }, queryInterval * 1000)
 }
 
 startPoll()
