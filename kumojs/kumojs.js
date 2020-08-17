@@ -29,6 +29,7 @@ Object.defineProperty(exports, '__esModule', { value: true })
 const sjcl = require('sjcl')
 const request = require('request')
 const base64 = require('base-64')
+const _ = require('lodash')
 class Kumo {
     constructor(config) {
         this.cfg = config
@@ -79,7 +80,7 @@ class Kumo {
         let p = base64.decode(cfg.password)
         let dt1 = sjcl.codec.hex.fromBits(sjcl.hash.sha256.hash(sjcl.codec.hex.toBits(this.l2h(Array.prototype.map.call(p + dt, function(m2) {
             return m2.charCodeAt(0)
-        })))));
+        })))))
         let dt1_l = this.h2l(dt1)
         let dt2 = ''
         for (let i = 0; i < 88; i++) {
@@ -124,7 +125,13 @@ class Kumo {
                     try {
                         var dt = JSON.parse(body)
                         console.error('body: ' + body)
-                        resolve(dt)
+
+                        const api_error = body._api_error
+                        if (!_.isNil(api_error)) {
+                            reject(api_error)
+                        } else {
+                            resolve(dt)
+                        }
                     } catch (e) {
                         console.error('Unable to parse result after  put :', body)
                         console.error(e)

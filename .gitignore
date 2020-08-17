@@ -88,3 +88,4 @@ typings/
 .dynamodb/
 .vscode/launch.json
 .vscode/settings.json
+kumo.cfg

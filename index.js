@@ -129,7 +129,7 @@ const queryKumo = function() {
 }
 
 const startPoll = function() {
-    logging.info('Starting to Kumo: ' + username)
+    logging.info('Starting to poll with Kumo account: ' + username)
     queryKumo()
     interval(async() => {
         queryKumo()
