@@ -117,11 +117,7 @@ const queryKumo = function() {
             logging.info('   Address: ' + address)
             logging.info('   Status: ' + JSON.stringify(status))
 
-            Object.keys(status).forEach(key => {
-                const topic = mqtt_helpers.generateTopic(topic_prefix, roomLabel, key)
-                client.smartPublish(topic, status[key].toString(), mqttOptions)
-            })
-
+            client.smartPublishCollection(mqtt_helpers.generateTopic(topic_prefix, roomLabel), status, [], mqttOptions)
         })
 
     })
