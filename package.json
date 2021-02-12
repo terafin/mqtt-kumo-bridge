@@ -21,7 +21,7 @@
         "mqtt": "latest",
         "interval-promise": "latest",
         "request": "latest",
-        "base-64": "^0.1",
+        "base-64": "^1.0",
         "sjcl": "^1.0",
         "source-map-support": "^0.5.16"
     },
